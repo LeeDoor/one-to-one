@@ -1,0 +1,21 @@
+﻿<Window x:Class="one_to_one.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:one_to_one"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListView Name="phonesList" ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=FirstName}">name</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=LastName}">surnane</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=BirthDay}">birth</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Card.SerialNumber}">card id</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
